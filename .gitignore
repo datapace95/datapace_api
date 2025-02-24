@@ -1,0 +1,3 @@
+/.dockerignore
+/metadata
+/test.ipynb
