@@ -1,0 +1,29 @@
+==================================================================================================
+pour build un container avec docker :
+
+1 creer un fichier Dockerfile
+2 lancer docker
+3 dans le terminal, se placer à la racine du projet
+4 executer : docker build -t [nom_app] .
+
+==================================================================================================
+pour checker l'api en local, lancer l'api avec docker :
+
+commande : docker run -p 8080:8080 eu.gcr.io/datapace-190495/datapace_api
+
+==================================================================================================
+pour envoyer le container sur Artifact Registry
+
+lancer Google Cloud SDK Shell
+
+commande : gcloud init
+commande : docker push eu.gcr.io/datapace-190495/datapace_api:latest
+
+==================================================================================================
+pour lancer une app sur cloud run
+
+Dans le service cloud run cliquer sur DEPLOYER UN CONTENEUR / Service / à partir d'une image conteneur
+
+pour l'url du conteneur, selectionner le container dans artifact registry
+
+dans "port du conteneur", choisir le meme port que dans le fichier Dockerfile
