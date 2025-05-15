@@ -1,3 +1,4 @@
 /.dockerignore
 /metadata
 /test.ipynb
+/scripts/__pycache__
