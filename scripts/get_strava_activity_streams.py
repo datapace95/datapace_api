@@ -102,6 +102,7 @@ def get_strava_activity_streams(which, df_cred, activity_id) :
     # -------------------
     activity_ids_to_get_list = list([])
 
+    print(f">>>>>> activity id : {str(activity_id)}")
     if activity_id :
         activity_ids_to_get_list = activity_ids_to_get_list.append(activity_id)
     else :
