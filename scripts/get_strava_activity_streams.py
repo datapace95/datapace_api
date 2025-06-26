@@ -1,5 +1,5 @@
 
-def get_strava_activity_streams(which, df_cred) :
+def get_strava_activity_streams(which, df_cred, activity_id) :
 
     # -------------------
     # Var
@@ -102,9 +102,12 @@ def get_strava_activity_streams(which, df_cred) :
     # -------------------
     activity_ids_to_get_list = list([])
 
-    for e in activity_id_list_from_activities :
-        if e not in activity_id_list_from_streams :
-            activity_ids_to_get_list.append(e)
+    if activity_id :
+        activity_ids_to_get_list = activity_ids_to_get_list.append(activity_id)
+    else :
+        for e in activity_id_list_from_activities :
+            if e not in activity_id_list_from_streams :
+                activity_ids_to_get_list.append(e)
 
     # -------------------
     # main loop to get streams by api calls
