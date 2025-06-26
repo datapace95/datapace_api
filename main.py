@@ -87,9 +87,9 @@ def get_strava_raw_data() :
     print("get_strava_athlete_zones completed")
 
     print('-------------------------------')
-    print("get_strava_athlete_zones function is running...")
+    print("get_strava_activity_streams function is running...")
     get_strava_activity_streams(df_cred=df_cred_strava_api, which='all', activity_id = object_id)
-    print("get_strava_athlete_zones completed")
+    print("get_strava_activity_streams completed")
 
     return "get_strava_raw_data finished."
 
@@ -119,8 +119,7 @@ def strava_webhook():
                             "User-Agent": "App-Strava-Webhook-Endpoint",
                             "x-api-key": DATAPACE_API_KEY
                         },
-                        json={"object_id": object_id},
-                        timeout=10,
+                        json={"object_id": object_id}
                     )
             print("reponse call api interne :", resp.status_code)
         else :
